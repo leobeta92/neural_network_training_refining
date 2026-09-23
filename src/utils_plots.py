@@ -45,3 +45,13 @@ def plot_value_array(i, predictions_array, true_label):
 
   thisplot[predicted_label].set_color('red')
   thisplot[true_label].set_color('blue')
+
+def cmap_muestras(x_train, y_train, labels):
+  for i in range(9):
+
+    plt.subplot(330 + 1 + i)
+    plt.imshow(x_train[i], cmap=plt.get_cmap('gray'))
+    plt.title(labels[y_train[i]])
+
+plt.subplots_adjust(hspace = 1)
+plt.show()
